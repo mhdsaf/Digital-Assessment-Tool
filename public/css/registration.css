@@ -1,0 +1,122 @@
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+@media(min-width:598px){
+    .logo{
+        margin-top: 0px;
+    }
+}
+@media(max-width:950px){
+    .login{
+        font-size: 2.7rem!important;
+    }
+}
+/*
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    1.75rem
+*/
+@media(max-width:769px){
+    .form-control-lg{
+        font-size: 1rem!important;
+        line-height: 1!important;
+        border-radius: .3rem;
+    }
+    .login{
+        font-size: 2.3rem!important;
+    }
+}
+
+@media(max-width:681px){
+    .logo{
+        width: 50px;
+        height: 50px;
+    }
+    .login{
+        font-size: 2.1rem!important;
+    }
+    .regist{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:597px){
+    .logo{
+        width: 45px;
+        height: 45px;
+        margin-top: 0px;
+    }
+    .login{
+        font-size: 1.8rem!important;
+    }
+    .regist{
+        font-size: 1.3rem;
+    }
+    .container{
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        margin: 0 auto;   
+    }
+}
+@media(max-width:585px){
+    .container{
+        padding-left: 7px!important;
+        padding-right: 7px!important;
+    }
+}
+@media(max-width:531px){
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .login{
+        font-size: 1.5rem!important;
+    }
+    .regist{
+        font-size: 1.3rem;
+    }
+}
+@media(max-width:466px){
+    .login{
+        margin-top: 7px;
+    }
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .form-control-lg{
+        padding: .3rem .5rem!important;
+        font-size: 1rem!important;
+        line-height: 1!important;
+        border-radius: .3rem;
+    }
+}
+@media(max-width:398px){
+    .logo{
+        width: 40px;
+        height: 40px;
+    }
+    .regist{
+        font-size: 1.2rem;
+    }
+}
+@media(max-width:372px){
+    .regist{
+        font-size: 1.1rem;
+    }
+}
+@media(max-width:345px){
+    .regist{
+        font-size: 1rem;
+    }
+}
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(229, 103, 23, 0.8);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+    outline: 0 none;
+}

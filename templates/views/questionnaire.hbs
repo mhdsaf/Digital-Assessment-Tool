@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="css/questionnaire.css">
+  <script src="js/questionnaire.js"></script>
+  <title>About</title>
+</head>
+<body>
+  <div class="container-fluid lead">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-10 col-md-10 col-lg-7 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                
+                <p>Welcome <span id="welcome"></span>, kindly fill all fields to proceed to the next step</p>
+                
+                <form id="msform" class="">
+                    <div class="container text-center sticky-top bg-white border-bottom border-muted pt-2">
+                        <ul id="progressbar" class="">
+                            <li class="active element" style="width: 16.6%;" id="account"><strong>Business Strategy</strong></li>
+                            <li class="element" id="personal" style="width: 16.6%;"><strong>Internal Digitalization</strong></li>
+                            <li class="element" id="digital" style="width: 16.6%;"><strong>Digital Products</strong></li>
+                            <li class="element" id="payment" style="width: 16.6%;"><strong>Data Management</strong></li>
+                            <li class="element" id="content" style="width: 16.6%;"><strong>Content Production</strong></li>
+                            <li class="element" id="confirm" style="width: 16.6%;"><strong>Done</strong></li>
+                        </ul>
+                    </div>
+                    <!-- progressbar -->
+                    <br> <!-- fieldsets -->
+                    <fieldset class="">
+                        <div class="form-card lead">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Business Strategy:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 1 - 6</h2>
+                                </div>
+                            </div>
+                            <br>
+                           <div class="question">
+                            
+                                <i class="fas fa-angle-right"></i>
+                                <span style="font-weight: 500;">Does your organisation have a written business plan/strategy?</span>
+                            
+                                      <div class="inputGroup">
+                                          <input id="c1q1radio1" name="radio1" type="radio" value="4"/>
+                                          <label for="c1q1radio1">Yes</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                         <input id="c1q1radio3" name="radio1" type="radio" value="2"/>
+                                         <label for="c1q1radio3">Somewhat we have but not fully written</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                         <input id="c1q1radio2" name="radio1" type="radio" value="1"/>
+                                         <label for="c1q1radio2">No</label>
+                                     </div>
+                            </div>
+                            <div class="question">
+                              <i class="fas fa-angle-right"></i>
+                             <span style="font-weight: 500;">How big (i.e.: in FTEs) is the business/corporate structure at the Organisation (Marketing, Sponsorship, Digital, Communications...)?</span>
+                             <div class="inputGroup">
+                                <input id="c1q2radio1" name="radio2" type="radio" value="4"/>
+                                <label for="c1q2radio1">Yes</label>
+                             </div>
+                             <div class="inputGroup">
+                                <input id="c1q2radio3" name="radio2" type="radio" value="2"/>
+                                <label for="c1q2radio3">Somewhat we have but not fully written</label>
+                             </div>
+                             <div class="inputGroup">
+                                <input id="c1q2radio2" name="radio2" type="radio" value="1"/>
+                                <label for="c1q2radio2">No</label>
+                             </div>
+                            </div>
+                            <div class="question">
+                                <i class="fas fa-angle-right"></i>
+                               <span style="font-weight: 500;">There are a few (+3) people working on digital operations (Social Media, Web, Analytics, CRM etc...)?</span>
+                               <div class="inputGroup">
+                                  <input id="c1q3radio1" name="radio3" type="radio" value="4"/>
+                                  <label for="c1q3radio1">Yes, and they are only focused on digital</label>
+                               </div>
+                               <div class="inputGroup">
+                                  <input id="c1q3radio3" name="radio3" type="radio" value="2"/>
+                                  <label for="c1q3radio3">Yes but they do other things</label>
+                               </div>
+                               <div class="inputGroup">
+                                  <input id="c1q3radio2" name="radio3" type="radio" value="1"/>
+                                  <label for="c1q3radio2">Much less</label>
+                               </div>
+                              </div>
+                        </div>
+                        <input type="button" name="next" class="next action-button" value="Next" id="next1"/>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Internal Digitalization:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 6</h2>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <div class="question">
+                                    <i class="fas fa-angle-right"></i>
+                                     <span style="font-weight: 500;">Is there a 3-5 year IT strategy documented?</span>
+                                    <div class="inputGroup">
+                                         <input id="c2q1radio1" name="radio4" type="radio" value="4"/>
+                                        <label for="c2q1radio1">Yes</label>
+                                    </div>
+                                    <div class="inputGroup">
+                                       <input id="c2q1radio3" name="radio4" type="radio" value="2"/>
+                                        <label for="c2q1radio3">We deal with our IT on a yearly basis</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                       <input id="c2q1radio2" name="radio4" type="radio" value="1"/>
+                                         <label for="c2q1radio2">No</label>
+                                     </div>
+                                </div>
+                           
+                                 <div class="question">
+                                    <i class="fas fa-angle-right"></i>
+                                     <span style="font-weight: 500;">Do employees regularly use Project Management software (e.g.: Asana, Trello, Atlassian, Wetrack etc.) to manage their workloads?</span>
+                                    <div class="inputGroup">
+                                         <input id="c2q2radio1" name="radio5" type="radio" value="4"/>
+                                        <label for="c2q2radio1">Yes</label>
+                                    </div>
+                                    <div class="inputGroup">
+                                       <input id="c2q2radio3" name="radio5" type="radio" value="2"/>
+                                        <label for="c2q2radio3">We deal with our IT on a yearly basis</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                       <input id="c2q2radio2" name="radio5" type="radio" value="1"/>
+                                         <label for="c2q2radio2">No</label>
+                                     </div>
+                                 </div>
+                                <div class="question">
+                                    <i class="fas fa-angle-right"></i>
+                                     <span style="font-weight: 500;">Do employees use corporate chat (e.g.: Slack, Microsoft Teams, etc.) as a standard communication platform?</span>
+                                    <div class="inputGroup">
+                                         <input id="c2q3radio1" name="radio6" type="radio" value="4"/>
+                                        <label for="c2q3radio1">Yes</label>
+                                    </div>
+                                    <div class="inputGroup">
+                                       <input id="c2q3radio3" name="radio6" type="radio" value="2"/>
+                                        <label for="c2q3radio3">We deal with our IT on a yearly basis</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                       <input id="c2q3radio2" name="radio6" type="radio" value="1"/>
+                                         <label for="c2q3radio2">No</label>
+                                     </div>
+                                </div>
+                                <div class="question">
+                                    <i class="fas fa-angle-right"></i>
+                                     <span style="font-weight: 500;">Does the organisation have access at anytime, anywhere to documentation without any connectivity issue?</span>
+                                    <div class="inputGroup">
+                                         <input id="c2q4radio1" name="radio7" type="radio" value="4"/>
+                                        <label for="c2q4radio1">Yes</label>
+                                    </div>
+                                    <div class="inputGroup">
+                                       <input id="c2q4radio3" name="radio7" type="radio" value="2"/>
+                                        <label for="c2q4radio3">Some departments do, others don't</label>
+                                     </div>
+                                     <div class="inputGroup">
+                                       <input id="c2q4radio2" name="radio7" type="radio" value="1"/>
+                                         <label for="c2q4radio2">No</label>
+                                     </div>
+                                </div>
+
+                        </div>
+                        <input type="button" name="next" class="next action-button" value="Next" id="next2" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    <fieldset >
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Digital Products:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 3 - 6</h2>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="question">
+                                <i class="fas fa-angle-right"></i>
+                                   <span style="font-weight: 500;">Do you have a 100% mobile responsive website?</span>
+                                    <div class="inputGroup">
+                                        <input id="c3q1radio1" name="radio8" type="radio" value="4"/>
+                                        <label for="c3q1radio1">Yes</label>
+                                    </div>
+                                   <div class="inputGroup">
+                                          <input id="c3q1radio3" name="radio8" type="radio" value="2"/>
+                                         <label for="c3q1radio3">Somewhat we have but not fully written</label>
+                                   </div>
+                                   <div class="inputGroup">
+                                          <input id="c3q1radio2" name="radio8" type="radio" value="1"/>
+                                         <label for="c3q1radio2">No</label>
+                                   </div>
+                            </div>
+                            <div class="question">
+                                <i class="fas fa-angle-right"></i>
+                                 <span style="font-weight: 500;">Do you use analytics  on your website? Such as Google Analytics.</span>
+                                  <div class="inputGroup">
+                                      <input id="c3q2radio1" name="radio9" type="radio" value="4"/>
+                                      <label for="c3q2radio1">Yes</label>
+                                  </div>
+                                 <div class="inputGroup">
+                                        <input id="c3q2radio3" name="radio9" type="radio" value="2"/>
+                                       <label for="c3q2radio3">Somewhat we have but not fully written</label>
+                                 </div>
+                                 <div class="inputGroup">
+                                        <input id="c3q2radio2" name="radio9" type="radio" value="1"/>
+                                       <label for="c3q2radio2">No</label>
+                                 </div>
+                          </div>
+                          <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                               <span style="font-weight: 500;">Is your website development managed by an external agency?</span>
+                                <div class="inputGroup">
+                                    <input id="c3q3radio1" name="radio10" type="radio" value="4"/>
+                                    <label for="c3q3radio1">Yes</label>
+                                </div>
+                               <div class="inputGroup">
+                                      <input id="c3q3radio3" name="radio10" type="radio" value="2"/>
+                                     <label for="c3q3radio3">Somewhat we have but not fully written</label>
+                               </div>
+                               <div class="inputGroup">
+                                      <input id="c3q3radio2" name="radio10" type="radio" value="1"/>
+                                     <label for="c3q3radio2">No</label>
+                               </div>
+                        </div>
+                        <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                               <span style="font-weight: 500;">Do you have an app?</span>
+                                <div class="inputGroup">
+                                    <input id="c3q4radio1" name="radio11" type="radio" value="4"/>
+                                    <label for="c3q4radio1">Yes</label>
+                                </div>
+                               <div class="inputGroup">
+                                      <input id="c3q4radio3" name="radio11" type="radio" value="2"/>
+                                     <label for="c3q4radio3">Somewhat we have but not fully written</label>
+                               </div>
+                               <div class="inputGroup">
+                                      <input id="c3q4radio2" name="radio11" type="radio" value="1"/>
+                                     <label for="c3q4radio2">No</label>
+                               </div>
+                        </div>
+                        <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                              <span style="font-weight: 500;">Do you collect analytics from app downloads & usage?</span>
+                               <div class="inputGroup">
+                                   <input id="c3q5radio1" name="radio12" type="radio" value="4"/>
+                                   <label for="c3q5radio1">Yes</label>
+                               </div>
+                              <div class="inputGroup">
+                                     <input id="c3q5radio3" name="radio12" type="radio" value="2"/>
+                                    <label for="c3q5radio3">Somewhat we have but not fully written</label>
+                              </div>
+                              <div class="inputGroup">
+                                     <input id="c3q5radio2" name="radio12" type="radio" value="1"/>
+                                    <label for="c3q5radio2">No</label>
+                              </div>
+                      </div>
+                      <div class="question">
+                        <i class="fas fa-angle-right"></i>
+                          <span style="font-weight: 500;">Do you feel that you are able to easily launch Web & Mobile projects easily ? </span>
+                           <div class="inputGroup">
+                               <input id="c3q6radio1" name="radio13" type="radio" value="4"/>
+                               <label for="c3q6radio1">Yes</label>
+                          </div>
+                          <div class="inputGroup">
+                                 <input id="c3q6radio3" name="radio13" type="radio" value="2"/>
+                                <label for="c3q6radio3">Somewhat we have but not fully written</label>
+                          </div>
+                          <div class="inputGroup">
+                                 <input id="c3q6radio2" name="radio13" type="radio" value="1"/>
+                                <label for="c3q6radio2">No</label>
+                          </div>
+                    </div>
+                    <div class="question">
+                        <i class="fas fa-angle-right"></i>
+                          <span style="font-weight: 500;">Do you have a merchandising eCommerce?</span>
+                           <div class="inputGroup">
+                               <input id="c3q7radio1" name="radio14" type="radio" value="4"/>
+                               <label for="c3q7radio1">Yes</label>
+                           </div>
+                          <div class="inputGroup">
+                                 <input id="c3q7radio3" name="radio14" type="radio" value="2"/>
+                                <label for="c3q7radio3">Somewhat we have but not fully written</label>
+                          </div>
+                          <div class="inputGroup">
+                                 <input id="c3q7radio2" name="radio14" type="radio" value="1"/>
+                                <label for="c3q7radio2">No</label>
+                          </div>
+                 </div>
+                            
+                        </div>
+                        <input type="button" name="next" class="next action-button" value="Next" id="next3"/> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Data Management:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 4 - 6</h2>
+                                </div>
+                            </div> 
+                            <br>
+                            <div class="question">
+                             <i class="fas fa-angle-right"></i>
+                             <span style="font-weight: 500;">Do you collect personal data from your digital touch points? (Emails from Website, profiles from Facebook, Single Sign-On...)</span>
+                             <div class="inputGroup">
+                                <input id="c4q1radio1" name="radio15" type="radio" value="4"/>
+                                <label for="c4q1radio1">Yes, absolutely</label>
+                             </div>
+                             <div class="inputGroup">
+                                <input id="c4q1radio3" name="radio15" type="radio" value="2"/>
+                                <label for="c4q1radio3">Yes, but we don't have all of the touchpoints</label>
+                             </div>
+                             <div class="inputGroup">
+                                <input id="c4q1radio2" name="radio15" type="radio" value="1"/>
+                                <label for="c4q1radio2">Not at all</label>
+                             </div>
+                          </div>
+                          <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you collect demographic (age, gender, income, etc.) and/or psychographic (personal values, attitudes, interests, personality traits, etc.) data on consumers?</span>
+                            <div class="inputGroup">
+                               <input id="c4q2radio1" name="radio16" type="radio" value="4"/>
+                               <label for="c4q2radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q2radio3" name="radio16" type="radio" value="2"/>
+                               <label for="c4q2radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q2radio2" name="radio16" type="radio" value="1"/>
+                               <label for="c4q2radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you have more than one consumer database that could contain the same information (i.e.: siloed data)?</span>
+                            <div class="inputGroup">
+                               <input id="c4q3radio1" name="radio17" type="radio" value="4"/>
+                               <label for="c4q3radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q3radio3" name="radio17" type="radio" value="2"/>
+                               <label for="c4q3radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q3radio2" name="radio17" type="radio" value="1"/>
+                               <label for="c4q3radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you have a centralized CRM system that is used by the entire organization? CRM cross-checks information with all sources (e.g.: web, ticketing, loyalty programs, newsletters subscriptions etc..</span>
+                            <div class="inputGroup">
+                               <input id="c4q4radio1" name="radio18" type="radio" value="4"/>
+                               <label for="c4q4radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q4radio3" name="radio18" type="radio" value="2"/>
+                               <label for="c4q4radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q4radio2" name="radio18" type="radio" value="1"/>
+                               <label for="c4q4radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">What CRM system do you use? CRM cross-checks information with all sources (e.g.: web, ticketing, loyalty programs, newsletters subscriptions etc..</span>
+                            <div class="inputGroup">
+                               <input id="c4q5radio1" name="radio19" type="radio" value="4"/>
+                               <label for="c4q5radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q5radio3" name="radio19" type="radio" value="2"/>
+                               <label for="c4q5radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q5radio2" name="radio19" type="radio" value="1"/>
+                               <label for="c4q5radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you input your data manually or automatically into your CRM? </span>
+                            <div class="inputGroup">
+                               <input id="c4q6radio1" name="radio20" type="radio" value="4"/>
+                               <label for="c4q6radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q6radio3" name="radio20" type="radio" value="2"/>
+                               <label for="c4q6radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q6radio2" name="radio20" type="radio" value="1"/>
+                               <label for="c4q6radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you exploit (ticket/web/mobile app/email) consumer data to consumer fans? (i.e: Segmenting Newsletter based on demographics or behavior) </span>
+                            <div class="inputGroup">
+                               <input id="c4q7radio1" name="radio21" type="radio" value="4"/>
+                               <label for="c4q7radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q7radio3" name="radio21" type="radio" value="2"/>
+                               <label for="c4q7radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q7radio2" name="radio21" type="radio" value="1"/>
+                               <label for="c4q7radio2">No</label>
+                            </div>
+                         </div>
+                         <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Do you analyse the Consumer Data collected manually? Do you have a dashboard or do you excel to analyse? </span>
+                            <div class="inputGroup">
+                               <input id="c4q8radio1" name="radio22" type="radio" value="4"/>
+                               <label for="c4q8radio1">Yes</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q8radio3" name="radio22" type="radio" value="2"/>
+                               <label for="c4q8radio3">Somewhat we have but not fully written</label>
+                            </div>
+                            <div class="inputGroup">
+                               <input id="c4q8radio2" name="radio22" type="radio" value="1"/>
+                               <label for="c4q8radio2">No</label>
+                            </div>
+                         </div>
+
+                        </div> <input type="button" name="next" class="next action-button" value="Next" id="next4" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Content Production:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 5 - 6</h2>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Does the Organisation have a formal (written) digital content strategy?</span>
+                            <div class="inputGroup">
+                                <input id="c5q1radio1" name="radio23" type="radio" value="4"/>
+                                <label for="c5q1radio1">Yes absolutely</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q1radio3" name="radio23" type="radio" value="2"/>
+                                <label for="c5q1radio3">Yes somewhat</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q1radio2" name="radio23" type="radio" value="1"/>
+                                <label for="c5q1radio2">No</label>
+                            </div>
+                          </div>
+                          <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Does the Organisation have a clear social media strategy?</span>
+                            <div class="inputGroup">
+                                <input id="c5q2radio1" name="radio24" type="radio" value="4"/>
+                                <label for="c5q2radio1">Yes absolutely</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q2radio3" name="radio24" type="radio" value="2"/>
+                                <label for="c5q2radio3">Yes somewhat</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q2radio2" name="radio24" type="radio" value="1"/>
+                                <label for="c5q2radio2">No</label>
+                            </div>
+                          </div>
+                          <div class="question">
+                            <i class="fas fa-angle-right"></i>
+                            <span style="font-weight: 500;">Does the Organisation have a written digital monetization strategy?</span>
+                            <div class="inputGroup">
+                                <input id="c5q3radio1" name="radio25" type="radio" value="4"/>
+                                <label for="c5q3radio1">Yes absolutely</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q3radio3" name="radio25" type="radio" value="2"/>
+                                <label for="c5q3radio3">Yes somewhat</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="c5q3radio2" name="radio25" type="radio" value="1"/>
+                                <label for="c5q3radio2">No</label>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="button" name="next" class="nexttt action-button" value="Submit" id="next5" /><input type="button" name="next" class="next action-button" value="Submit" id="go" hidden/> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /><br><br><br>
+                        <div id="errors">
+                            
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Finish:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Step 6 - 6</h2>
+                                </div>
+                            </div> <br><br>
+                            <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                            <div class="row justify-content-center">
+                                <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                            </div> <br><br>
+                            <div class="row justify-content-center">
+                                <div class="col-7 text-center">
+                                    <h5 class="purple-text text-center">You Have Successfully Completed Your Assessment!</h5>
+                                </div>
+                            </div>
+                        </div><br>
+                        <button class="btn btn-outline-success"><a href="dashboard" style="text-decoration: none;">Proceed to results</a></button><br>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/dash.js"></script>
+<script src="js/setup.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <title>Admin Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" class="mt-1">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+         
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Name:</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientName"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4"> 
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Company Name:</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientCompany"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-building fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Job Title:</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="ClientTitle"></div>
+                        </div>
+                    <div class="col-auto">
+                      <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Date Of Submission:</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientDate"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            
+            <div class="col-xl-7 col-lg-6">
+              <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Assessment</h6>
+              </div>
+              <div class="card-body">
+                <h4 class="small font-weight-bold">BUSINESS STRATEGY <span class="float-right" id="bs"></span></h4>
+                <div class="progress mb-4">
+                  <div class="progress-bar bg-danger" role="progressbar" id="bsbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">INTERNAL DIGITALIZATION <span class="float-right" id="id"></span></h4>
+                <div class="progress mb-4">
+                  <div class="progress-bar bg-warning" role="progressbar" id="idbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">DIGITAL PRODUCTS <span class="float-right" id="dp"></span></h4>
+                <div class="progress mb-4">
+                  <div class="progress-bar" role="progressbar" id="dpbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">DATA MANAGEMENT <span class="float-right" id="dm"></span></h4>
+                <div class="progress mb-4">
+                  <div class="progress-bar bg-info" role="progressbar" id="dmbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 class="small font-weight-bold">CONTENT PRODUCTION <span class="float-right" id="cp"></span></h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" id="cpbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                </div>
+              </div>
+              
+            </div>
+            <!-- Pie Chart -->
+            <div class="col-xl-5 col-lg-6">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Result Detail</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body" style="padding-bottom: 33px;">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart">
+
+                    </canvas>
+                    
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!--RPMS-->
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Score</h6>
+                </div>
+                <div class="card-body text-center">
+                    <div>
+                        <canvas id="foo">
+                        </canvas> 
+                    </div>
+                    <span style="font-size:25px;" class="text-success px-2 py-2">
+                        <span id="ClientTotal"></span><span style="font-weight: ; color: grey">/ 100</span>
+                    </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Approach</h6>
+                </div>
+                <div class="text-center pt-2">
+                  <h3 id="approachHeader"></h3>
+                </div>
+                <div class="card-body pt-1 pb-1">
+                  <p id="approachBody">"Digital is a concept that can give your organization the competitive advantage to operate and excel in the 21st Century. Your challenge lies in understanding which areas of digital transformation you are strong in and which of those areas that need to be strengthened. There are some exciting developments in the ecosystem, but at the same time there are more questions than answers. Who are my fans? Who is buying tickets? What is the best way to work remotely? What processes can be automated? Which platforms should I use to manage contracts?
+                    Our recommendation: the most meaningful next step for an organization with such a score is to perform an early stage assessment and benchmarking exercise to determine where it sits within the digital ecosystem and determine the best next steps to embark on the digital transformation journey"
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Row -->
+          <div class="row"> <!-- 12 units -->
+            <div class="col-xl-12 mb-4">
+
+              <!-- Illustrations -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">What is N3XT SPORTS?</h6>
+                </div>
+                <div class="card-body">
+                  <p>"Contact us!
+                    There is no stopping digitalization in the sports industry. We know some may think that digital is about posting something on Facebook, others think it’s IT. In reality, digital is about aligning business units with IT for the benefit of the organization. There are numerous ways to make operations run more efficiently, without risking existing workflows. In a constantly changing environment, digital cannot be seen as a support mechanism or a nice-to-have; it is a critical foundation for the modern sports organization.
+                    
+                    N3XT Sports helps clients throughout their entire digital transformation journey by:
+                    <ul>
+                    <li> Assessing organizational readiness for digital transformation</li>
+                    <li> Reviewing and redefining the organization’s digital & data architecture around flexible and independent platforms.</li>
+                    <li>Digitizing operations and workflows to improve efficiencies and reduce risks.</li>
+                    <li> Upgrading the digi-tech literacy of the entire organization’s staff and partners.</li>
+                    <li> Creating amazing digital experiences for fans and users through the development of simple and efficient solutions (mobile, web & platforms).</li>
+                    <li> Monetizing digital assets and identifying new digital revenue streams."</li></ul>
+                      </p>
+                  <a target="_blank" rel="nofollow" href="mailto:info@n3xtsports.com?subject=Inquiry%20for%20N3XT%20Sports%20from%20webmail">Contact Us! &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; N3XT SPORTS <span id="copyright"></span> </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="js/demo/gauge.js"></script>
+  <script src="js/gaugee.js"></script>
+</body>
+
+</html>
