@@ -171,7 +171,7 @@ $(document).ready(function(){
         console.log(scores);
         if(errors.length==0 && scores.length==25){
             // all answers are valid
-            document.getElementById('go').click();
+            console.log("confirm0");
             let date = new Date();
             let time = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
             let BS = scores[0] + scores[1] + scores[2];
@@ -200,6 +200,8 @@ $(document).ready(function(){
                     console.log(data);
             })
         });
+        console.log("confirm1");
+        document.getElementById('go').click();
         }else{
             let index = 0;
             while(index<errors.length){
@@ -209,17 +211,9 @@ $(document).ready(function(){
             }
         }
     });
-    //console.log(localStorage.getItem('email'));
-    // fetch('/results',{ // www.dat.com/user
-    //     method: 'PATCH',
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(obj)
-    // }).then((response)=>{
-    //         response.json().then((data)=>{
-    //         console.log(data);
-    //     })
-    // });
+    $("#proceed").click(function (e) { 
+        e.preventDefault();
+        console.log("proceed");
+        document.getElementById('pls').click();
     });
+});

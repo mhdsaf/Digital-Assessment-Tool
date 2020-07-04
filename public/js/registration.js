@@ -5,8 +5,7 @@ $(document).ready(function () {
         let name = $("#name").val();
         let title = $("#title").val();
         let company = $("#company").val();
-        if(email!='' || name!='' || title!='' || company!=''){
-            console.log("asd");
+        if(email!='' && name!='' && title!='' && company!=''){
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
                 //valid email
                 let obj = {
@@ -34,6 +33,7 @@ $(document).ready(function () {
                     })
                 });
             }else{
+                console.log("2")
                 //invalid email
                 $("#error").html(`<div class="alert alert-light" style="color: red">Please enter a valid email</div>`)
             }

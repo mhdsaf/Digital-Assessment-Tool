@@ -20,7 +20,7 @@ router.get('/questionnaire', async(req,res)=>{
 })
 router.get('/dashboard', async(req,res)=>{
     res.render('dashboard');
-})
+});
 router.patch('/results', async(req,res)=>{
     console.log(req.body.time);
     const user = await clients.findOne({email: req.body.email});

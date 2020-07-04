@@ -40,7 +40,7 @@ app.get('', async (req,res)=>{
     res.render('registration')
     // send json
     // send html
-})
+});
 app.listen(3000, ()=>{
     console.log("Server is up on running!");
     console.log(3000)
