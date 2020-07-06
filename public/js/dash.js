@@ -1,4 +1,20 @@
 $(document).ready(function () {
+    $("#pdfDownloader").click(function(){
+        console.log("pdf");
+        html2canvas(document.getElementById("page-top"), {
+            onrendered: function(canvas) {
+                let a = ($("#page-top").width()+50)*0.2645833333;
+                let b = $("#page-top").height()*0.2645833333;
+                console.log(a);
+                console.log(b);
+                var imgData = canvas.toDataURL('image/png', 1.0);
+                console.log('Report Image URL: '+imgData);
+                var doc = new jsPDF('p', 'mm', [a, b]); //210mm wide and 297mm high
+                doc.addImage(imgData, 'JPEG', 10, 10);
+                doc.save('sample.pdf');
+            }
+        });
+	});
     // get user profile: name/title...
     let index = new Date();
     $("#copyright").html(index.getFullYear());

@@ -2,6 +2,8 @@ const express = require('express');
 
 const clients = require('../models/client');
 
+const puppeteer = require('puppeteer')
+
 const router = new express.Router();
 
 router.post('/user', async(req,res)=>{
@@ -21,6 +23,8 @@ router.get('/questionnaire', async(req,res)=>{
 router.get('/dashboard', async(req,res)=>{
     res.render('dashboard');
 });
+router.post('/dashboard/print', async(req,res)=>{
+})
 router.patch('/results', async(req,res)=>{
     try {
         console.log(req.body.time);

@@ -279,4 +279,19 @@ $(document).ready(function(){
             $("#error").html(`<div class="alert alert-light" style="color: red">Make sure all fields are filled</div>`)
         }
     });
+    $("#pdf").click(function (e) { 
+        e.preventDefault();
+        fetch('/dashboard/print',{
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+        }).then((response)=>{
+            response.json().then((data)=>{
+                console.log(data);
+            })
+        });
+    });
+    
 });

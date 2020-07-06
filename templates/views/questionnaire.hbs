@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
@@ -178,7 +180,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     outline: 0 none!important;
 }
 </style>
-<body>
+<body id="printDiv">
   <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-11 col-sm-10 col-md-10 col-lg-7 text-center p-0 mt-3 mb-2">
@@ -214,7 +216,6 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
                             
                                 <i class="fas fa-angle-right"></i>
                                 <span style="font-weight: 500;">Does your organisation have a written business plan/strategy?</span>
-                            
                                       <div class="inputGroup">
                                           <input id="c1q1radio1" name="radio1" type="radio" value="4"/>
                                           <label for="c1q1radio1">Yes</label>
@@ -694,52 +695,45 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
                             </div>
                             <br><br>
                             <!--START-->
-                                <!-- Trigger/Open The Modal -->
-                                
-
-                                <!-- The Modal -->
                                 <div id="myModal" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close" style="padding-left: 98%;">&times;</span>
-                                    <div class="modal-body">
-                                        <div class="container">
-                                            <div class="media">
-                                                <img class="d-inline-block logo" src="https://www.n3xtsports.com/wp-content/uploads/2018/05/favicon.png" alt="n3xt">
-                                                <div class="media-body text-center lead">
-                                                    <h1 class="display-4 login lead">Digital Assessment Tool</h1>
-                                                    <br>
+                                    <div class="modal-content border border-primary">
+                                        <span class="close" style="padding-left: 98%;">&times;</span>
+                                        <div class="modal-body mb-3">
+                                            <div class="container">
+                                                <div class="media">
+                                                    <img class="d-inline-block logo" src="https://www.n3xtsports.com/wp-content/uploads/2018/05/favicon.png" alt="n3xt">
+                                                    <div class="media-body text-center lead">
+                                                        <h1 class="display-4 login lead">Digital Assessment Tool</h1>
+                                                        <br>
+                                                    </div>
                                                 </div>
+                                                <h3 class="regist">Registration Form</h3>
+                                                <form class="mt-3" id="form1">
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-lg" type="text" id="name" placeholder="Full Name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                    <input class="form-control form-control-lg" type="email" id="email" placeholder="Email" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                    <input class="form-control form-control-lg" type="text" id="company" placeholder="Company" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                    <input class="form-control form-control-lg" type="text" id="title" placeholder="Job Title" required>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="agree">
+                                                        <label class="custom-control-label" for="agree" style="color: black;">Do you agree getting contacted by N3XT Sports?</label>
+                                                    </div><br>
+                                                    <button class="btn btn-block border border-white" id="submitUser" style="background-color: #DF3939; font-weight: 700">Submit</button>
+                                                    <span id="error"></span>
+                                                </form>
+                                            <div id="error">
                                             </div>
-                                            <h3 class="regist">Registration Form</h3>
-                                            <form class="mt-3" id="form1">
-                                                <div class="form-group">
-                                                    <input class="form-control form-control-lg" type="text" id="name" placeholder="Full Name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                <input class="form-control form-control-lg" type="email" id="email" placeholder="Email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                <input class="form-control form-control-lg" type="text" id="company" placeholder="Company" required>
-                                                </div>
-                                                <div class="form-group">
-                                                <input class="form-control form-control-lg" type="text" id="title" placeholder="Job Title" required>
-                                                </div>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="agree">
-                                                    <label class="custom-control-label" for="agree" style="color: black;">Do you agree getting contacted by N3XT Sports?</label>
-                                                </div><br>
-                                                <button class="btn btn-block border border-white" id="submitUser" style="background-color: #DF3939; font-weight: 700">Submit</button>
-                                                <span id="error"></span>
-                                            </form>
-                                        <div id="error">
+                                            <a href="dashboard" id="dashb"></a>
+                                            </div>
                                         </div>
-                                        <a href="dashboard" id="dashb"></a>
-                                        </div>
-          </div>
-                                </div>
-
+                                    </div>
                                 </div>
 
                             <!--End-->
