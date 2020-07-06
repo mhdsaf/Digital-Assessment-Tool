@@ -13,18 +13,181 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="css/questionnaire.css">
   <script src="js/questionnaire.js"></script>
-  <title>About</title>
+  <title>Questionnaire</title>
 </head>
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+@media(min-width:598px){
+    .logo{
+        margin-top: 0px;
+    }
+}
+@media(max-width:950px){
+    .login{
+        font-size: 2.7rem!important;
+    }
+}
+/*
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    1.75rem
+*/
+@media(max-width:769px){
+    .form-control-lg{
+        font-size: 1rem!important;
+        line-height: 1!important;
+        border-radius: .3rem;
+    }
+    .login{
+        font-size: 2.3rem!important;
+    }
+}
+
+@media(max-width:681px){
+    .logo{
+        width: 50px;
+        height: 50px;
+    }
+    .login{
+        font-size: 2.1rem!important;
+    }
+    .regist{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:597px){
+    .logo{
+        width: 45px;
+        height: 45px;
+        margin-top: 0px;
+    }
+    .login{
+        font-size: 1.8rem!important;
+    }
+    .regist{
+        font-size: 1.3rem;
+    }
+    .container{
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        margin: 0 auto;   
+    }
+}
+@media(max-width:585px){
+    .container{
+        padding-left: 7px!important;
+        padding-right: 7px!important;
+    }
+}
+@media(max-width:531px){
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .login{
+        font-size: 1.5rem!important;
+    }
+    .regist{
+        font-size: 1.3rem;
+    }
+}
+@media(max-width:466px){
+    .login{
+        margin-top: 7px;
+    }
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .form-control-lg{
+        padding: .3rem .5rem!important;
+        font-size: 1rem!important;
+        line-height: 1!important;
+        border-radius: .3rem;
+    }
+}
+@media(max-width:398px){
+    .logo{
+        width: 40px;
+        height: 40px;
+    }
+    .regist{
+        font-size: 1.2rem;
+    }
+}
+@media(max-width:372px){
+    .regist{
+        font-size: 1.1rem;
+    }
+}
+@media(max-width:345px){
+    .regist{
+        font-size: 1rem;
+    }
+}
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(229, 103, 23, 0.8)!important;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6)!important;
+    outline: 0 none!important;
+}
+</style>
 <body>
-  <div class="container-fluid lead">
+  <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-11 col-sm-10 col-md-10 col-lg-7 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 
-                <p>Welcome <span id="welcome"></span>, kindly fill all fields to proceed to the next step</p>
+                <p>Kindly fill all fields to proceed to the next step</p>
                 
                 <form id="msform" class="">
-                    <div class="container text-center sticky-top bg-white border-bottom border-muted pt-2">
+                    <div class="container text-center sticky-top bg-white border-bottom border-muted pt-2" id="mainDiv">
                         <ul id="progressbar" class="">
                             <li class="active element" style="width: 16.6%;" id="account"><strong>Business Strategy</strong></li>
                             <li class="element" id="personal" style="width: 16.6%;"><strong>Internal Digitalization</strong></li>
@@ -524,18 +687,69 @@
                                 <div class="col-5">
                                     <h2 class="steps">Step 6 - 6</h2>
                                 </div>
-                            </div> <br><br>
+                            </div> <br>
                             <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
                             <div class="row justify-content-center">
                                 <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
-                            </div> <br><br>
+                            </div>
+                            <br><br>
+                            <!--START-->
+                                <!-- Trigger/Open The Modal -->
+                                
+
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" style="padding-left: 98%;">&times;</span>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="media">
+                                                <img class="d-inline-block logo" src="https://www.n3xtsports.com/wp-content/uploads/2018/05/favicon.png" alt="n3xt">
+                                                <div class="media-body text-center lead">
+                                                    <h1 class="display-4 login lead">Digital Assessment Tool</h1>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <h3 class="regist">Registration Form</h3>
+                                            <form class="mt-3" id="form1">
+                                                <div class="form-group">
+                                                    <input class="form-control form-control-lg" type="text" id="name" placeholder="Full Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                <input class="form-control form-control-lg" type="email" id="email" placeholder="Email" required>
+                                                </div>
+                                                <div class="form-group">
+                                                <input class="form-control form-control-lg" type="text" id="company" placeholder="Company" required>
+                                                </div>
+                                                <div class="form-group">
+                                                <input class="form-control form-control-lg" type="text" id="title" placeholder="Job Title" required>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="agree">
+                                                    <label class="custom-control-label" for="agree" style="color: black;">Do you agree getting contacted by N3XT Sports?</label>
+                                                </div><br>
+                                                <button class="btn btn-block border border-white" id="submitUser" style="background-color: #DF3939; font-weight: 700">Submit</button>
+                                                <span id="error"></span>
+                                            </form>
+                                        <div id="error">
+                                        </div>
+                                        <a href="dashboard" id="dashb"></a>
+                                        </div>
+          </div>
+                                </div>
+
+                                </div>
+
+                            <!--End-->
                             <div class="row justify-content-center">
                                 <div class="col-7 text-center">
                                     <h5 class="purple-text text-center">You Have Successfully Completed Your Assessment!</h5>
                                 </div>
                             </div>
                         </div><br>
-                        <button class="btn btn-outline-success" id="proceed">Proceed To Results</button><br>
+                        <button class="btn btn-outline-info" id="myBtn">Proceed To Results</button><br>
                         <a href="dashboard" style="text-decoration: none;" id="pls"></a></a>
                     </fieldset>
                 </form>
@@ -543,7 +757,37 @@
         </div>
     </div>
 </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+$("#myBtn").click(function (e){
+    e.preventDefault();
+    modal.style.display = "block";
+    $("#mainDiv").removeClass("sticky-top");
+})
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  $("#mainDiv").addClass("sticky-top");
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    $("#mainDiv").addClass("sticky-top");
+  }
+}
+</script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

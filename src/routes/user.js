@@ -6,7 +6,7 @@ const router = new express.Router();
 
 router.post('/user', async(req,res)=>{
     try {
-        const user = new clients({name: req.body.name, email: req.body.email, title: req.body.title, company: req.body.company});
+        const user = new clients({name: req.body.name, email: req.body.email, title: req.body.title, company: req.body.company, ContactAgreement: req.body.ContactAgreement});
         await user.save();
 
         res.status(200).send({success: "Successfully inserted"})
@@ -22,7 +22,8 @@ router.get('/dashboard', async(req,res)=>{
     res.render('dashboard');
 });
 router.patch('/results', async(req,res)=>{
-    console.log(req.body.time);
+    try {
+        console.log(req.body.time);
     const user = await clients.findOne({email: req.body.email});
     const obj = {
         Business_Strategy: req.body.BS,
@@ -33,8 +34,14 @@ router.patch('/results', async(req,res)=>{
         Total: req.body.BS + req.body.ID + req.body.DP + req.body.DM + req.body.CP,
         SubmittedAt: req.body.time
     };
-    user.results.push(obj);
+    await user.results.push(obj);
     await user.save();
+    res.send({msg:"all good"});
+    } catch (error) {
+        console.log("wtf");
+        console.log(error);
+    }
+    
 });
 router.post('/userresults', async(req,res)=>{
     const email = req.body.email;

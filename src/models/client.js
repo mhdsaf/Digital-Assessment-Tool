@@ -22,6 +22,10 @@ const table1 = new mongoose.Schema({ // define
         required: true,
         trim: true
     },
+    ContactAgreement:{
+        type: Boolean,
+        required: true
+    },
     results:[]
 },{
     timestamps: true

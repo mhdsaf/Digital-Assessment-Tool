@@ -37,7 +37,7 @@ app.use(userRouter);
 // Done with setup
 
 app.get('', async (req,res)=>{
-    res.render('registration')
+    res.render('questionnaire')
     // send json
     // send html
 });

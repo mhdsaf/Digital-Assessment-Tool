@@ -1,10 +1,9 @@
 $(document).ready(function(){
-    $("#welcome").html(localStorage.getItem('name'));
     var current_fs, next_fs, previous_fs; //fieldsets
     var opacity;
     var current = 1;
     var steps = $("fieldset").length;
-    
+    var obj = "";
     setProgressBar(current);
     
     $(".next").click(function(){
@@ -179,28 +178,30 @@ $(document).ready(function(){
             let DP = scores[7] + scores[8] + scores[9] + scores[10] + scores[11] + scores[12] + scores[13];
             let DM = scores[14] + scores[15] + scores[16] + scores[17] + scores[18] + scores[19] + scores[20] + scores[21];
             let CP = scores[22] + scores[23] + scores[24];  
-            let obj = {
+            
+            obj = {
                 BS,
                 ID,
                 DP,
                 DM,
                 CP,
-                email: localStorage.getItem('email'),
                 time
             };
-            fetch('/results',{
-                method: 'PATCH',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(obj)
-            }).then((response)=>{
-                response.json().then((data)=>{
-                    console.log(data);
-            })
-        });
-        console.log("confirm1");
+        //     fetch('/results',{
+        //         method: 'PATCH',
+        //         headers: {
+        //             'Accept': 'application/json',
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(obj)
+        //     }).then((response)=>{
+        //         response.json().then((data)=>{
+        //             console.log(data);
+        //     })
+        // });
+
+        console.log(obj);
+        localStorage.setItem('testResults', obj);
         document.getElementById('go').click();
         }else{
             let index = 0;
@@ -211,9 +212,71 @@ $(document).ready(function(){
             }
         }
     });
-    $("#proceed").click(function (e) { 
+    $("#submitUser").click(function (e) {
         e.preventDefault();
-        console.log("proceed");
-        document.getElementById('pls').click();
+        let agree = false;
+        if (document.getElementById('agree').checked) {
+            agree = true;   
+        }
+        var email = $("#email").val();
+        let name = $("#name").val();
+        let title = $("#title").val();
+        let company = $("#company").val();
+        if(email!='' && name!='' && title!='' && company!=''){
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+                //valid email
+                
+                let obj1 = {
+                    email,
+                    name,
+                    title,
+                    company,
+                    ContactAgreement: agree
+                };
+                fetch('/user',{ // www.dat.com/user
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj1)
+                }).then((response)=>{
+                        response.json().then((data)=>{
+                        if(data.success){
+                            localStorage.setItem('email', email);
+                            localStorage.setItem('name', name);
+                            //document.getElementById('ques').click();
+                            let obj2 = {
+                                ...obj,
+                                email: email
+                            }
+                            console.log(obj2);
+                            fetch('/results',{
+                                method: 'PATCH',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(obj2)
+                            }).then((response)=>{
+                                response.json().then((data)=>{
+                                    console.log(data);
+                                    document.getElementById('dashb').click();
+                                })
+                            });
+                        }else{
+                            //fail
+                        }
+                    })
+                });
+            }else{
+                console.log("2")
+                //invalid email
+                $("#error").html(`<div class="alert alert-light" style="color: red">Please enter a valid email</div>`)
+            }
+        }else{
+            console.log("else")
+            $("#error").html(`<div class="alert alert-light" style="color: red">Make sure all fields are filled</div>`)
+        }
     });
 });
