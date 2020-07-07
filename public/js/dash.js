@@ -11,7 +11,7 @@ $(document).ready(function () {
                 console.log('Report Image URL: '+imgData);
                 var doc = new jsPDF('p', 'mm', [a, b]); //210mm wide and 297mm high
                 doc.addImage(imgData, 'JPEG', 10, 10);
-                doc.save('sample.pdf');
+                doc.save('Result-Dashboard.pdf');
             }
         });
 	});
