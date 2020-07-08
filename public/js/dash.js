@@ -60,6 +60,7 @@ $(document).ready(function () {
         response.json().then((data)=>{
             $("#ClientName").html(data.name);
             $("#ClientCompany").html(data.company);
+            $("#emailUs").html(`<a target="_blank" rel="nofollow" href="mailto:info@n3xtsports.com?subject=Digital Assessment of ${data.company}" class="btn btn-block btn-lg btn-info">CONTACT US</a>`);
             $("#ClientTitle").html(data.title);
         })
     });

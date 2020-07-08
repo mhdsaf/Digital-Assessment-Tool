@@ -8,7 +8,7 @@ const router = new express.Router();
 
 router.post('/user', async(req,res)=>{
     try {
-        const user = new clients({name: req.body.name, email: req.body.email, title: req.body.title, company: req.body.company, ContactAgreement: req.body.ContactAgreement});
+        const user = new clients({name: req.body.name, email: req.body.email, title: req.body.title, company: req.body.company, Organization: req.body.organization, ContactAgreement: req.body.ContactAgreement});
         await user.save();
 
         res.status(200).send({success: "Successfully inserted"})
@@ -70,5 +70,37 @@ router.post('/profile', async(req,res)=>{
     } catch (error) {
         res.status(400).send({error: "Email doesn't exist"});
     }
+});
+router.post('/try', async(req,res)=>{
+// This sample code will make a request to LinkedIn's API to retrieve and print out some
+// basic profile information for the user whose access token you provide.
+
+const https = require('https');
+
+// Replace with access token for the r_liteprofile permission
+const accessToken = '';
+const options = {
+  host: 'api.linkedin.com',
+  path: '/v2/me',
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${accessToken}`,
+    'cache-control': 'no-cache',
+    'X-Restli-Protocol-Version': '2.0.0'
+  }
+};
+
+const profileRequest = https.request(options, function(res) {
+  let data = '';
+  res.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  res.on('end', () => {
+    const profileData = JSON.parse(data);
+    console.log(JSON.stringify(profileData, 0, 2));
+  });
+});
+profileRequest.end();
 })
 module.exports = router

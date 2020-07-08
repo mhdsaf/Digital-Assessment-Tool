@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $("#otherSec").hide();
     var current_fs, next_fs, previous_fs; //fieldsets
     var opacity;
     var current = 1;
@@ -168,7 +169,7 @@ $(document).ready(function(){
         }
         console.log(errors);
         console.log(scores);
-        if(errors.length==0 && scores.length==25){
+        //if(errors.length==0 && scores.length==25){
             // all answers are valid
             console.log("confirm0");
             let date = new Date();
@@ -203,14 +204,14 @@ $(document).ready(function(){
         console.log(obj);
         localStorage.setItem('testResults', obj);
         document.getElementById('go').click();
-        }else{
+        //}else{
             let index = 0;
             while(index<errors.length){
                 console.log("as");
                 $("#errors").append(`<div class="alert alert-danger">Missing question(s) in ${errors[index]}</div>`)
                 index++;
             }
-        }
+        //}
     });
     $("#submitUser").click(function (e) {
         e.preventDefault();
@@ -222,17 +223,36 @@ $(document).ready(function(){
         let name = $("#name").val();
         let title = $("#title").val();
         let company = $("#company").val();
-        if(email!='' && name!='' && title!='' && company!=''){
+        let organization = $("#gender").val();
+        if(email!='' && name!='' && title!='' && company!='' && organization!='--Type of Organization--'){
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
                 //valid email
-                
-                let obj1 = {
-                    email,
-                    name,
-                    title,
-                    company,
-                    ContactAgreement: agree
-                };
+                if (organization=='Other') {
+                    organization = $("#otherCompany").val();
+                    var obj1 = {
+                        email,
+                        name,
+                        title,
+                        company,
+                        organization,
+                        ContactAgreement: agree
+                    };
+                    console.log(obj1);
+                    if (($("#otherCompany").val())=='') {
+                        $("#error").html(`<div class="alert alert-light" style="color: red">Make sure all fields are filled</div>`);
+                        return false;
+                    }
+                }else{
+                    var obj1 = {
+                        email,
+                        name,
+                        title,
+                        company,
+                        organization,
+                        ContactAgreement: agree
+                    };
+                    console.log(obj1);
+                }
                 fetch('/user',{ // www.dat.com/user
                     method: 'POST',
                     headers: {
@@ -279,7 +299,7 @@ $(document).ready(function(){
             $("#error").html(`<div class="alert alert-light" style="color: red">Make sure all fields are filled</div>`)
         }
     });
-    $("#pdf").click(function (e) { 
+    $("#pdf").click(function (e) {
         e.preventDefault();
         fetch('/dashboard/print',{
         method: 'POST',
@@ -293,5 +313,12 @@ $(document).ready(function(){
             })
         });
     });
-    
+    $("#gender").change(function (e) { 
+        e.preventDefault();
+        if (($("#gender").val())=='Other') {
+            $("#otherSec").show();
+        } else {
+            $("#otherSec").hide();
+        }
+    });
 });
