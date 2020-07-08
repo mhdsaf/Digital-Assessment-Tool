@@ -231,7 +231,7 @@ $(document).ready(function(){
                     organization = $("#otherCompany").val();
                     var obj1 = {
                         email,
-                        name,
+                        name, 
                         title,
                         company,
                         organization,
