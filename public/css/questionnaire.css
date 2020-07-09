@@ -13,7 +13,7 @@ p {
 
 #heading {
     text-transform: uppercase;
-    color: #673AB7;
+    color: #28179B;
     font-weight: normal
 }
 
@@ -43,7 +43,6 @@ p {
 }
 
 #msform input,
-#msform select,
 #msform textarea {
     padding: 8px 15px 8px 15px;
     border: 1px solid #ccc;
@@ -64,13 +63,13 @@ p {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid #28179B;
     outline-width: 0
 }
 
 #msform .action-button {
     width: 100px;
-    background: #673AB7;
+    background: #28179B;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -112,14 +111,14 @@ p {
 
 .fs-title {
     font-size: 25px;
-    color: #673AB7;
+    color:#28179B;
     margin-bottom: 15px;
     font-weight: normal;
     text-align: left
 }
 
 .purple-text {
-    color: #673AB7;
+    color: #28179B;
     font-weight: normal
 }
 
@@ -143,7 +142,7 @@ p {
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #28179B
 }
 
 #progressbar li {
@@ -208,7 +207,7 @@ p {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #28179B
 }
 
 .progress {
@@ -216,7 +215,7 @@ p {
 }
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #28179B
 }
 
 .fit-image {
@@ -247,7 +246,7 @@ p {
 	height: 10px;
 	border-radius: 50%;
 	content: '';
-	background-color: #5562eb;
+	background-color: #28179B;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -258,7 +257,7 @@ p {
 }
 .inputGroup:hover
 {
-    background-color: #5562eb;
+    background-color: #28179B;
      
 }
 label:hover  {
@@ -503,13 +502,13 @@ code {
     }
 }
 .btn-outline-info {
-    color: #673ab7!important;
+    color: #28179B!important;
     background-color: transparent!important;
     background-image: none!important;
-    border-color: #673ab7!important;
+    border-color: #28179B!important;
 }
 .btn-outline-info:hover {
     color: #fff!important;
-    background-color: #673ab7!important;
-    border-color: #673ab7!important;
+    background-color: #28179B!important;
+    border-color: #28179B!important;
 }

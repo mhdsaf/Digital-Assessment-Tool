@@ -9588,7 +9588,7 @@ a.text-secondary:hover, a.text-secondary:focus {
 }
 
 .text-success {
-  color: #1cc88a !important;
+  color: red !important;
 }
 
 a.text-success:hover, a.text-success:focus {
@@ -9596,7 +9596,7 @@ a.text-success:hover, a.text-success:focus {
 }
 
 .text-info {
-  color: #36b9cc !important;
+  color: #33a5ff !important;
 }
 
 a.text-info:hover, a.text-info:focus {
@@ -10031,7 +10031,7 @@ a:focus {
 }
 
 .border-left-success {
-  border-left: 0.25rem solid #1cc88a !important;
+  border-left: 0.25rem solid red !important;
 }
 
 .border-bottom-success {
@@ -10039,7 +10039,7 @@ a:focus {
 }
 
 .border-left-info {
-  border-left: 0.25rem solid #36b9cc !important;
+  border-left: 0.25rem solid #33a5ff !important;
 }
 
 .border-bottom-info {
@@ -10047,7 +10047,7 @@ a:focus {
 }
 
 .border-left-warning {
-  border-left: 0.25rem solid #f6c23e !important;
+  border-left: 0.25rem solid #C31D1D !important;
 }
 
 .border-bottom-warning {
